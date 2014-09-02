@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            var options = {};
+            var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+
+            //responsive code begin
+            function ScaleSlider() {
+                var parentWidth = $('#slider1_container').parent().width();
+                if (parentWidth) {
+                    jssor_slider1.$SetScaleWidth(parentWidth);
+                }
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            //Scale slider after document ready
+            ScaleSlider();
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                //Capture window resize event
+                $(window).bind('resize', ScaleSlider);
+            }
+            //responsive code end
+        });
+    </script>
+    <script>
+        jssor_slider1_starter = function (containerId) {
+
+            var options = {
+                $AutoPlay: false,                                   //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $SlideDuration: 800,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                  //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                  //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$(containerId, options);
+        }
+    </script>
+    <script type="text/javascript" src="js/nav.jQuery.func.js"></script>
+    <script type="text/javascript" src="js/gen_validatorv4.js"></script>
+    <script type="text/javascript" src="js/my_form_validator.js"></script>
+    <link href="Style.css" rel="stylesheet" type="text/css" />
+
+    <title></title>
+</head>
+<body>
+    <nav id="sticky_navigation">
+        <ul class="image">
+            <li><img src="img/slices/sarah-logo-top.jpg" alt="Sarah's Logo'" /></li>
+            <li><img src="img/slices/david-logo-top.gif" alt="David's Logo'" /></li>
+        </ul>
+        <p>sarah + david</p><p style="font-weight: bold">web creations</p>
+        <ul class="link">
+            <li class="about" ><a class="about" href="#about">about us</a></li>
+            <li class="work" ><a class="work" href="#work">our work</a></li>
+            <li class="contact" ><a class="contact" href="#contact">contact us</a></li>
+            <li class="top" ><a class="top" href="#slider1_container">^</a></li>
+        </ul>
+    </nav><!-- /end .nav -->
+
+    <!-- Jssor Slider Begin -->
+    <div id="slider1_container" style="position: relative; width: 600px; height: 200px; overflow: hidden;">
+
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 200px;
+        overflow: hidden;">
+            <div><img u="image" src="img/Pressed-Cardboard-Logo-MockUp.jpg" alt="Mock Up" /></div>
+            <div><img u="image" src="img/Silver-Stamping-Logo-MockUp.jpg"  alt="Mock Up" /></div>
+        </div> <!-- Bullet Navigator Skin Begin -->
+        <!-- bullet navigator container -->
+        <div u="navigator" class="jssorb09" style="position: absolute; bottom: 16px; right: 10px;">
+            <!-- bullet navigator item prototype -->
+            <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+        </div>
+        <!-- Bullet Navigator Skin End -->
+        <!-- Trigger -->
+        <script>
+            jssor_slider1_starter('slider1_container');
+        </script>
+    </div><!-- Jssor Slider End --> 
+
+    <div id="about">
+        <div class="main" style="background-image: url(img/slices/SarahPic.jpg);">
+            <div class="shadow">
+                <div class="title"><p>About Sarah</p></div><!-- /end .title -->
+                <div class="paragraph">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec tempor interdum lobortis. Phasellus pulvinar nulla aliquam eleifend egestas.
+                        Pellentesque adipiscing id elit sit amet convallis. Nulla placerat nibh nisl.
+                        Fusce tempus turpis id tellus vehicula, id dignissim nisl dictum.
+                        Proin dictum diam eget arcu malesuada congue. Morbi egestas euismod tempus.
+                        Donec ultrices mi in lacus sodales luctus. Nunc volutpat aliquam sapien quis commodo.
+                        Fusce auctor, nisl facilisis lacinia condimentum, quam tellus blandit dui, eu scelerisque nunc nisl a massa.
+                        Nulla varius magna pellentesque magna tincidunt, consequat placerat purus posuere.
+                        Praesent sollicitudin nulla at scelerisque volutpat.
+                    </p>
+                </div><!-- /end .paragraph -->
+                <img src="img/slices/SarahLogo-LG.png" />
+            </div><!-- /end .shadow -->
+        </div><!-- /end .main -->
+
+        <div class="main" style="background-image: url(img/slices/DavidPic.jpg);">
+            <div class="shadow">
+                <div class="title"><p>About David</p></div><!-- /end .title -->
+                <div class="paragraph">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec tempor interdum lobortis. Phasellus pulvinar nulla aliquam eleifend egestas. 
+                        Pellentesque adipiscing id elit sit amet convallis. Nulla placerat nibh nisl. 
+                        Fusce tempus turpis id tellus vehicula, id dignissim nisl dictum. 
+                        Proin dictum diam eget arcu malesuada congue. Morbi egestas euismod tempus. 
+                        Donec ultrices mi in lacus sodales luctus. Nunc volutpat aliquam sapien quis commodo. 
+                        Fusce auctor, nisl facilisis lacinia condimentum, quam tellus blandit dui, eu scelerisque nunc nisl a massa. 
+                        Nulla varius magna pellentesque magna tincidunt, consequat placerat purus posuere. 
+                        Praesent sollicitudin nulla at scelerisque volutpat. 
+                    </p>
+                </div><!-- /end .paragraph -->
+                <img src="img/slices/DavidLogo-LG.png" />
+            </div><!-- /end .shadow -->
+        </div><!-- /end .main -->
+    </div><!-- /end #about -->
+
+    <div id="work">
+        <div class="mainS">
+            <div class="title"><p>Sarah's Work</p></div><!-- /end .title -->
+            <div class="blurb"><p>Check out some of Sarah's work.  She specializes in layout, branding and illustration.</p></div>
+            <div class="pictures">
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+                <img src="img/slices/ThumbPlaceholder.jpg" />
+            </div>
+        </div><!-- /end .main -->
+
+        <div class="mainD">
+            <div class="title"><p>David's Work</p></div>
+            <div class="paragraph">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing eliSt.
+                    Donec tempor interdum lobortis. Phasellus pulvinar nulla aliquam eleifend egestas.
+                    Pellentesque adipiscing id elit sit amet convallis. Nulla placerat nibh nisl.
+                    Fusce tempus turpis id tellus vehicula, id dignissim nisl dictum.
+                </p>
+            </div>
+        </div>
+    </div><!-- /end #work -->
+
+    <div id="contact">
+        <div class="main">
+            <div class="title"><p>this is contact</p></div><!-- /end .title -->
+            <div class="comment">
+                <form method="post" name="contactform" onsubmit="return validateForm()" action="php/contact-form-handler.php">
+                    <input type="text" name="email" placeholder="Email" />
+                    <input type="text" name="subject" placeholder="Subject" />
+                    <textarea name="message" placeholder="Message here..."></textarea>
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+        </div><!-- /end .main -->
+    </div><!-- /end #contact -->
+</body>
+</html>
